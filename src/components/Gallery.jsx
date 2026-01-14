@@ -116,6 +116,7 @@ const Gallery = () => {
           { id: 17, type: 'image', src: safari4, alt: '4x4 Safari photo 4', category: '4x4 Safari' },
           { id: 18, type: 'image', src: safari5, alt: '4x4 Safari photo 5', category: '4x4 Safari' },
           { id: 19, type: 'image', src: safari6, alt: '4x4 Safari photo 6', category: '4x4 Safari' },
+           { id: 19, type: 'image', src: safari7, alt: '4x4 Safari photo 7', category: '4x4 Safari' },
           { id: 13, type: 'video', src: kivuVideo, alt: 'kivu', category: 'Wildlife' },
         ];
         setMediaItems(defaultMedia);
