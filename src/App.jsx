@@ -34,6 +34,13 @@ import teaImage from './assets/nyungwe.jpg';
 import christopheProfile from './assets/christophe_profile.jpg'
 import congoNileImage from './assets/congo-nile.jpg'
 import OurTours from './components/OurTours.jsx'
+import Gallery from './components/Gallery.jsx';
+
+// New imports for assets previously referenced via absolute paths
+import whatsappLogo from './assets/whatsapp_logo.jpg'
+import nyanza1 from './assets/nyanza1.jpg'
+import nyanza2 from './assets/nyanza2.jpg'
+import nyanza3 from './assets/nyanza3.jpg'
 
 
 function App() {
@@ -431,21 +438,21 @@ function App() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl mx-auto">
           <div className="rounded-lg overflow-hidden shadow-lg bg-white">
             <img
-              src="/src/assets/nyanza1.jpg"
+              src={nyanza1}
               alt="Nyanza Cultural Trail 1"
               className="w-full h-64 object-cover"
             />
           </div>
           <div className="rounded-lg overflow-hidden shadow-lg bg-white">
             <img
-              src="/src/assets/nyanza2.jpg"
+              src={nyanza2}
               alt="Nyanza Cultural Trail 2"
               className="w-full h-64 object-cover"
             />
           </div>
           <div className="rounded-lg overflow-hidden shadow-lg bg-white">
             <img
-              src="/src/assets/nyanza3.jpg"
+              src={nyanza3}
               alt="Nyanza Cultural Trail 3"
               className="w-full h-64 object-cover"
             />
@@ -577,7 +584,7 @@ function App() {
         title="Chat with us on WhatsApp"
       >
         <img
-           src="/src/assets/whatsapp_logo.jpg"
+           src={whatsappLogo}
           alt="WhatsApp"
           className="whatsapp-icon"
         />
@@ -659,4 +666,4 @@ function App() {
 
 export default App
 
-import Gallery from './components/Gallery.jsx';
+
