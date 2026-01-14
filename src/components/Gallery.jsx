@@ -2,6 +2,30 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Button } from '@/components/ui/button.jsx';
 import GalleryModal from './GalleryModal.jsx';
 
+// New: import local assets so the bundler includes them
+import bikeInBoat from '../assets/bike_in_boat.jpg'
+import bike2 from '../assets/bike2.jpg'
+import volThumb from '../assets/vol.jpg'
+import bike3 from '../assets/bike3.jpg'
+import manImg from '../assets/man.jpg'
+import streetImg from '../assets/street.jpg'
+import streetsImg from '../assets/streets.jpg'
+import teaImg from '../assets/tea.jpg'
+import villageImg from '../assets/village.jpg'
+import village1Img from '../assets/village1.jpg'
+import volcanoImg from '../assets/volcano.jpg'
+import zebraImg from '../assets/zebra.jpg'
+import fourByFour1 from '../assets/4x4_1.svg'
+import fourByFour2 from '../assets/4x4_2.svg'
+import fourByFour3 from '../assets/4x4_3.svg'
+import safari1 from '../assets/safari1.jpeg'
+import safari2 from '../assets/safari2.jpeg'
+import safari3 from '../assets/safari3.jpeg'
+import safari4 from '../assets/safari4.jpeg'
+import safari5 from '../assets/safari5.jpeg'
+import safari6 from '../assets/safari6.jpeg'
+import kivuVideo from '../assets/kivu.mp4'
+
 
 const Gallery = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -43,28 +67,27 @@ const Gallery = () => {
         } else {
           // Fallback to default images if no backend data
           const defaultMedia = [
-            { id: 1, type: 'image', src: '/src/assets/bike_in_boat.jpg', alt: 'Bike in Boat', category: 'Adventures' },
-            { id: 2, type: 'image', src: '/src/assets/bike2.jpg', alt: 'Bike on Road', category: 'Cycling' },
-            { id: 3, type: 'image', src: '/src/assets/vol.jpg', alt: 'Volcanoes', category: 'Landscapes' },
-            { id: 4, type: 'image', src: '/src/assets/bike3.jpg', alt: 'Bike with Goats', category: 'Cultural' },
-            { id: 5, type: 'image', src: '/src/assets/man.jpg', alt: 'Man on Bike Silhouette', category: 'Adventures' },
-            { id: 6, type: 'image', src: '/src/assets/street.jpg', alt: 'Bike on Street Silhouette', category: 'Cultural' },
-            { id: 7, type: 'image', src: '/src/assets/streets.jpg', alt: 'Bikers on Street', category: 'Cycling' },
-            { id: 8, type: 'image', src: '/src/assets/tea.jpg', alt: 'Tea Plantation', category: 'Landscapes' },
-            { id: 9, type: 'image', src: '/src/assets/village.jpg', alt: 'Bikers in Village', category: 'Cultural' },
-            { id: 10, type: 'image', src: '/src/assets/village1.jpg', alt: 'Bikers in Village 1', category: 'Cultural' },
-            { id: 11, type: 'image', src: '/src/assets/volcano.jpg', alt: 'People with Gorillas', category: 'Wildlife' },
-            { id: 12, type: 'image', src: '/src/assets/zebra.jpg', alt: 'Zebras', category: 'Wildlife' },  
-            { id: 14, type: 'image', src: '/src/assets/4x4_1.svg', alt: '4x4 Safari 1', category: '4x4 Safari' },
-            { id: 15, type: 'image', src: '/src/assets/4x4_2.svg', alt: '4x4 Safari 2', category: '4x4 Safari' },
-            { id: 16, type: 'image', src: '/src/assets/4x4_3.svg', alt: '4x4 Safari 3', category: '4x4 Safari' },
-            { id: 17, type: 'image', src: '/src/assets/safari1.jpeg', alt: '4x4 Safari photo 1', category: '4x4 Safari' },
-            { id: 18, type: 'image', src: '/src/assets/safari2.jpeg', alt: '4x4 Safari photo 2', category: '4x4 Safari' },
-            { id: 19, type: 'image', src: '/src/assets/safari3.jpeg', alt: '4x4 Safari photo 3', category: '4x4 Safari' },
-            { id: 20, type: 'image', src: '/src/assets/safari4.jpeg', alt: '4x4 Safari photo 4', category: '4x4 Safari' },
-            { id: 21, type: 'image', src: '/src/assets/safari5.jpeg', alt: '4x4 Safari photo 5', category: '4x4 Safari' },
-            { id: 22, type: 'image', src: '/src/assets/safari6.jpeg', alt: '4x4 Safari photo 6', category: '4x4 Safari' },
-
+            { id: 1, type: 'image', src: bikeInBoat, alt: 'Bike in Boat', category: 'Adventures' },
+            { id: 2, type: 'image', src: bike2, alt: 'Bike on Road', category: 'Cycling' },
+            { id: 3, type: 'image', src: volThumb, alt: 'Volcanoes', category: 'Landscapes' },
+            { id: 4, type: 'image', src: bike3, alt: 'Bike with Goats', category: 'Cultural' },
+            { id: 5, type: 'image', src: manImg, alt: 'Man on Bike Silhouette', category: 'Adventures' },
+            { id: 6, type: 'image', src: streetImg, alt: 'Bike on Street Silhouette', category: 'Cultural' },
+            { id: 7, type: 'image', src: streetsImg, alt: 'Bikers on Street', category: 'Cycling' },
+            { id: 8, type: 'image', src: teaImg, alt: 'Tea Plantation', category: 'Landscapes' },
+            { id: 9, type: 'image', src: villageImg, alt: 'Bikers in Village', category: 'Cultural' },
+            { id: 10, type: 'image', src: village1Img, alt: 'Bikers in Village 1', category: 'Cultural' },
+            { id: 11, type: 'image', src: volcanoImg, alt: 'People with Gorillas', category: 'Wildlife' },
+            { id: 12, type: 'image', src: zebraImg, alt: 'Zebras', category: 'Wildlife' },  
+            { id: 14, type: 'image', src: fourByFour1, alt: '4x4 Safari 1', category: '4x4 Safari' },
+            { id: 15, type: 'image', src: fourByFour2, alt: '4x4 Safari 2', category: '4x4 Safari' },
+            { id: 16, type: 'image', src: fourByFour3, alt: '4x4 Safari 3', category: '4x4 Safari' },
+            { id: 17, type: 'image', src: safari1, alt: '4x4 Safari photo 1', category: '4x4 Safari' },
+            { id: 18, type: 'image', src: safari2, alt: '4x4 Safari photo 2', category: '4x4 Safari' },
+            { id: 19, type: 'image', src: safari3, alt: '4x4 Safari photo 3', category: '4x4 Safari' },
+            { id: 20, type: 'image', src: safari4, alt: '4x4 Safari photo 4', category: '4x4 Safari' },
+            { id: 21, type: 'image', src: safari5, alt: '4x4 Safari photo 5', category: '4x4 Safari' },
+            { id: 22, type: 'image', src: safari6, alt: '4x4 Safari photo 6', category: '4x4 Safari' },
           ];
           setMediaItems(defaultMedia);
           setCategories(['All', 'Adventures', 'Cycling', 'Cultural', 'Landscapes', 'Wildlife', '4x4 Safari']);
@@ -73,26 +96,25 @@ const Gallery = () => {
         console.error('Error loading media:', error);
         // Fallback to default images on error
         const defaultMedia = [
-          { id: 1, type: 'image', src: '/src/assets/bike_in_boat.jpg', alt: 'Bike in Boat', category: 'Adventures' },
-          { id: 2, type: 'image', src: '/src/assets/bike2.jpg', alt: 'Bike on Road', category: 'Cycling' },
-          { id: 3, type: 'image', src: '/src/assets/vol.jpg', alt: 'Volcanoes', category: 'Landscapes' },
-          { id: 4, type: 'image', src: '/src/assets/bike3.jpg', alt: 'Bike with Goats', category: 'Cultural' },
-          { id: 5, type: 'image', src: '/src/assets/man.jpg', alt: 'Man on Bike Silhouette', category: 'Adventures' },
-          { id: 6, type: 'image', src: '/src/assets/street.jpg', alt: 'Bike on Street Silhouette', category: 'Cultural' },
-          { id: 7, type: 'image', src: '/src/assets/streets.jpg', alt: 'Bikers on Street', category: 'Cycling' },
-          { id: 8, type: 'image', src: '/src/assets/tea.jpg', alt: 'Tea Plantation', category: 'Landscapes' },
-          { id: 9, type: 'image', src: '/src/assets/village.jpg', alt: 'Bikers in Village', category: 'Cultural' },
-          { id: 10, type: 'image', src: '/src/assets/village1.jpg', alt: 'Bikers in Village 1', category: 'Cultural' },
-          { id: 11, type: 'image', src: '/src/assets/volcano.jpg', alt: 'People with Gorillas', category: 'Wildlife' },
-          
-          { id: 12, type: 'image', src: '/src/assets/zebra.jpg', alt: 'Zebras', category: 'Wildlife' },  
-          { id: 14, type: 'image', src: '/src/assets/safari1.jpeg', alt: '4x4 Safari 1', category: '4x4 Safari' },
-          { id: 15, type: 'image', src: '/src/assets/safari2.jpeg', alt: '4x4 Safari 2', category: '4x4 Safari' },
-          { id: 16, type: 'image', src: '/src/assets/safari3.jpeg', alt: '4x4 Safari 3', category: '4x4 Safari' },
-          { id: 17, type: 'image', src: '/src/assets/safari4.jpeg', alt: '4x4 Safari photo 4', category: '4x4 Safari' },
-          { id: 18, type: 'image', src: '/src/assets/safari5.jpeg', alt: '4x4 Safari photo 5', category: '4x4 Safari' },
-          { id: 19, type: 'image', src: '/src/assets/safari6.jpeg', alt: '4x4 Safari photo 6', category: '4x4 Safari' },
-          { id: 13, type: 'video', src: '/src/assets/kivu.mp4', alt: 'kivu', category: 'Wildlife' },
+          { id: 1, type: 'image', src: bikeInBoat, alt: 'Bike in Boat', category: 'Adventures' },
+          { id: 2, type: 'image', src: bike2, alt: 'Bike on Road', category: 'Cycling' },
+          { id: 3, type: 'image', src: volThumb, alt: 'Volcanoes', category: 'Landscapes' },
+          { id: 4, type: 'image', src: bike3, alt: 'Bike with Goats', category: 'Cultural' },
+          { id: 5, type: 'image', src: manImg, alt: 'Man on Bike Silhouette', category: 'Adventures' },
+          { id: 6, type: 'image', src: streetImg, alt: 'Bike on Street Silhouette', category: 'Cultural' },
+          { id: 7, type: 'image', src: streetsImg, alt: 'Bikers on Street', category: 'Cycling' },
+          { id: 8, type: 'image', src: teaImg, alt: 'Tea Plantation', category: 'Landscapes' },
+          { id: 9, type: 'image', src: villageImg, alt: 'Bikers in Village', category: 'Cultural' },
+          { id: 10, type: 'image', src: village1Img, alt: 'Bikers in Village 1', category: 'Cultural' },
+          { id: 11, type: 'image', src: volcanoImg, alt: 'People with Gorillas', category: 'Wildlife' },
+          { id: 12, type: 'image', src: zebraImg, alt: 'Zebras', category: 'Wildlife' },  
+          { id: 14, type: 'image', src: safari1, alt: '4x4 Safari 1', category: '4x4 Safari' },
+          { id: 15, type: 'image', src: safari2, alt: '4x4 Safari 2', category: '4x4 Safari' },
+          { id: 16, type: 'image', src: safari3, alt: '4x4 Safari 3', category: '4x4 Safari' },
+          { id: 17, type: 'image', src: safari4, alt: '4x4 Safari photo 4', category: '4x4 Safari' },
+          { id: 18, type: 'image', src: safari5, alt: '4x4 Safari photo 5', category: '4x4 Safari' },
+          { id: 19, type: 'image', src: safari6, alt: '4x4 Safari photo 6', category: '4x4 Safari' },
+          { id: 13, type: 'video', src: kivuVideo, alt: 'kivu', category: 'Wildlife' },
         ];
         setMediaItems(defaultMedia);
         setCategories(['All', 'Adventures', 'Cycling', 'Cultural', 'Landscapes', 'Wildlife', '4x4 Safari']);
@@ -213,11 +235,9 @@ const Gallery = () => {
                 >
                   <img
                     src={image.src}
-                    
+                    alt={image.alt || image.title || 'gallery image'}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                    onError={(e) => {
-                      e.target.src = '/src/assets/placeholder.svg';
-                    }}
+                    onError={(e) => { e.target.style.display = 'none'; }}
                   />                            
                 </div>
               
