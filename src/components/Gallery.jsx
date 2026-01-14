@@ -24,6 +24,7 @@ import safari3 from '../assets/safari3.jpeg'
 import safari4 from '../assets/safari4.jpeg'
 import safari5 from '../assets/safari5.jpeg'
 import safari6 from '../assets/safari6.jpeg'
+import safari7 from '../assets/safari7.jpeg'
 import kivuVideo from '../assets/kivu.mp4'
 
 
@@ -88,6 +89,7 @@ const Gallery = () => {
             { id: 20, type: 'image', src: safari4, alt: '4x4 Safari photo 4', category: '4x4 Safari' },
             { id: 21, type: 'image', src: safari5, alt: '4x4 Safari photo 5', category: '4x4 Safari' },
             { id: 22, type: 'image', src: safari6, alt: '4x4 Safari photo 6', category: '4x4 Safari' },
+            { id: 22, type: 'image', src: safari7, alt: '4x4 Safari photo 7', category: '4x4 Safari' },
           ];
           setMediaItems(defaultMedia);
           setCategories(['All', 'Adventures', 'Cycling', 'Cultural', 'Landscapes', 'Wildlife', '4x4 Safari']);
